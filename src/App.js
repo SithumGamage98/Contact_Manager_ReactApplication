@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Header from './components/Header';
+import AddContact from './components/Add_Contact';
+import ContactList from './components/ContactList'
+import ContactCard from './components/Contact_Card';
 
 function App() {
+
+  //create an array list for contact details
+  const contacts = [
+      {
+        id : "1",
+        name : "sithum",
+        email : "sithum@123gmail.com"
+      },
+
+      {
+        id : "2",
+        name : "gayan",
+        email : "Gayan@123gmail.com"
+      }
+  ]
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='ui container'>
+      <Header/>
+      <AddContact/>
+      <ContactList x={contacts} />
     </div>
   );
 }
